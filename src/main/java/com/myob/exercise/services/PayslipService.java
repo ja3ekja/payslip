@@ -1,6 +1,6 @@
 package com.myob.exercise.services;
 
-import com.myob.exercise.model.EmployeesPayslip;
+import com.myob.exercise.model.PayslipInputData;
 import com.myob.exercise.model.Payslip;
 import com.myob.exercise.model.TaxComponents;
 
@@ -9,14 +9,10 @@ import java.math.RoundingMode;
 
 import static com.myob.exercise.constants.TaxConstants.*;
 
-/**
- * Created by HP on 2017-03-04.
- */
 public class PayslipService {
 
-    Payslip payslip;
+    public static Payslip calculate(PayslipInputData emp) {
 
-    public Payslip calculate(EmployeesPayslip emp) {
         String name = new StringBuilder(emp.getEmployee().getFirstName()).append(" ").append(emp.getEmployee().getLastName()).toString();
         BigDecimal salary = emp.getAnnualSalary();
         BigDecimal empSuper = new BigDecimal(emp.getEmployee().getSuperRate());
@@ -28,14 +24,11 @@ public class PayslipService {
 
         //System.out.println(grossIncome + " " + taxIncome + " " + netIncome + " " + superRate);
 
-        payslip = new Payslip(name, grossIncome, taxIncome, netIncome, valueSuperRate);
-        payslip.setPayPeriod(emp.getDates());
-
-        return payslip;
+        return new Payslip(name, emp.getDates(), grossIncome, taxIncome, netIncome, valueSuperRate);
     }
 
-    private TaxComponents getTaxConstants(BigDecimal limit) {
-        return getTaxConstantsList().stream().filter(tax -> tax.getLimit().compareTo(limit) >= 0).findFirst().get();
+    private static TaxComponents getTaxConstants(BigDecimal limit) {
+        return getTaxConstantsList().stream().filter(tax -> tax.getLimit().compareTo(limit) >= 0).findFirst().orElseGet(TaxComponents::new);
     }
 
 }

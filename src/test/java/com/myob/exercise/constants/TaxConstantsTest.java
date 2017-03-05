@@ -10,9 +10,6 @@ import java.util.List;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by HP on 2017-03-05.
- */
 public class TaxConstantsTest {
 
     private List<TaxComponents> taxList;

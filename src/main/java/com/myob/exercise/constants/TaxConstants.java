@@ -6,9 +6,6 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by HP on 2017-03-05.
- */
 public class TaxConstants {
 
     public final static BigDecimal MONTHS = new BigDecimal(12);
