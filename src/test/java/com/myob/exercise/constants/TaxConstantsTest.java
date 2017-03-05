@@ -1,6 +1,5 @@
 package com.myob.exercise.constants;
 
-import com.myob.exercise.model.Employee;
 import com.myob.exercise.model.TaxComponents;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,18 +7,18 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static javafx.scene.input.KeyCode.T;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by HP on 2017-03-05.
  */
 public class TaxConstantsTest {
 
-    private List<TaxComponents> taxList ;
+    private List<TaxComponents> taxList;
 
     @Before
-    public void getTaxConstantsList(){
+    public void getTaxConstantsList() {
         taxList = TaxConstants.getTaxConstantsList();
     }
 
@@ -30,11 +29,11 @@ public class TaxConstantsTest {
 
     @Test
     public void taxConstantsListCheckSizeTest() {
-        assertTrue(taxList.size()==5);
+        assertTrue(taxList.size() == 5);
     }
 
     @Test
     public void taxConstantsListCheckContentTest() {
-        assertTrue(taxList.get(2).getTaxMultiplier().equals( new BigDecimal(0.325)));
+        assertTrue(taxList.get(2).getTaxMultiplier().equals(new BigDecimal(0.325)));
     }
 }

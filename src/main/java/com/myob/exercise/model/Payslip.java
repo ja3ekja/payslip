@@ -90,6 +90,7 @@ public class Payslip {
         Payslip payslip = (Payslip) o;
 
         if (!name.equals(payslip.name)) return false;
+        if (!payPeriod.equals(payslip.payPeriod)) return false;
         if (!grossIncome.equals(payslip.grossIncome)) return false;
         if (!incomeTax.equals(payslip.incomeTax)) return false;
         if (!netIncome.equals(payslip.netIncome)) return false;
@@ -100,6 +101,7 @@ public class Payslip {
     @Override
     public int hashCode() {
         int result = name.hashCode();
+        result = 31 * result + payPeriod.hashCode();
         result = 31 * result + grossIncome.hashCode();
         result = 31 * result + incomeTax.hashCode();
         result = 31 * result + netIncome.hashCode();

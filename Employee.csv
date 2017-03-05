@@ -1,5 +1,5 @@
 firstName;lastName;annualSalary;superRate
-Indira;Blake;73543;24
+Indira;Blake;73543;24;1 March
 Brennan;Mccarthy;53997;11
 Jane;Patrick;94727;12
 Brendan;Ochoa;88716;2
@@ -12,7 +12,7 @@ Holmes;Workman;71623;21
 Kaden;Richards;93326;32
 Suki;Mosley;94062;3
 Keegan;Serrano;66844;48
-Maggy;Walton;82600;7
+Maggy;Walton;82600;7;1 March
 Vielka;Bond;93182;40
 Shay;Mann;74653;29
 Coby;Kim;66972;2
@@ -21,7 +21,7 @@ Zephr;Gould;54588;50
 Otto;Pace;69896;49
 Hermione;Coleman;56739;14
 Reagan;Baker;83274;25
-Jordan;Brady;77267;7
+Jordan;Brady;77267;7;1 March
 Tanisha;Hubbard;62467;23
 Uta;Thompson;85602;7
 Yolanda;Larsen;58798;12

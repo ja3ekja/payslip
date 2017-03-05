@@ -76,7 +76,7 @@ public class EmployeePayslipValidator {
     }
 
     public String validateEmptyOrNullString(String litteral) {
-        if (litteral != null && !litteral.equals(""))
+        if (litteral != null && !litteral.trim().equals(""))
             return litteral;
         throw new NullPointerException("Value could not be empty.");
     }

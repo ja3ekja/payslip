@@ -39,7 +39,8 @@ public class PayslipServiceTest {
 
     @Test
     public void calculateForSpecificLimitTest() {
-        assertTrue(payslipService.calculate(employeesPayslip).equals(payslip));
+        employeesPayslip.setDates("01 March - 31 March");
+        assertEquals((Object) payslipService.calculate(employeesPayslip), (Object) payslip);
     }
 
     @Test
