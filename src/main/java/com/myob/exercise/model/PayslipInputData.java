@@ -1,31 +1,28 @@
 package com.myob.exercise.model;
 
-import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class PayslipInputData {
 
     private Employee employee;
-    private String dates;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
-    public PayslipInputData(Employee employee, String dates) {
+    public PayslipInputData(Employee employee, LocalDate startDate, LocalDate endDate) {
         this.employee = employee;
-        this.dates = dates;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public Employee getEmployee() {
         return employee;
     }
 
-    public String getDates() {
-        return dates;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setDates(String dates) {
-        this.dates = dates;
+    public LocalDate getEndDate() {
+        return endDate;
     }
-
-    public BigDecimal getAnnualSalary() {
-        return employee.getAnnualSalary();
-    }
-
 }

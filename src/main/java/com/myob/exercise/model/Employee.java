@@ -2,25 +2,14 @@ package com.myob.exercise.model;
 
 import java.math.BigDecimal;
 
-public class Employee {
-    private String firstName;
-    private String lastName;
+public class Employee extends Person {
     private BigDecimal annualSalary;
     private float superRate;
 
     public Employee(String firstName, String lastName, BigDecimal annualSalary, float superRate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName);
         this.annualSalary = annualSalary;
         this.superRate = superRate;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public BigDecimal getAnnualSalary() {
@@ -34,5 +23,4 @@ public class Employee {
     public void setSuperRate(float superRate) {
         this.superRate = superRate;
     }
-
 }

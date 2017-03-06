@@ -1,10 +1,12 @@
-package com.myob.exercise.csv;
+package com.myob.exercise.fileoperation;
 
+import com.myob.exercise.Main;
 import com.myob.exercise.exceptions.PersonNotFoundException;
 import com.myob.exercise.exceptions.WrongPathException;
 import com.myob.exercise.model.Payslip;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -37,10 +39,18 @@ public class CsvOperations {
         return Arrays.asList(line.split(SEPARATOR));
     }
 
-    public static void writeCSVFile(Payslip payslip) throws IOException {
-        try (FileWriter writer = new FileWriter("C:\\Users\\HP\\Desktop\\myob\\payslip\\Employee.csv")) {
-            writer.write("name;payPeriod;grossIncome;incomeTax;netIncome;superRate");
-            writer.write(payslip.toCSV());
+    public static void writeCSVFile(Payslip slip, String ownerFilePath) throws IOException {
+        try (PrintWriter writer = new PrintWriter(resolveOutputFile(ownerFilePath))) {
+            writer.println(Payslip.toCSVHeader());
+            writer.println(slip.toString());
         }
+    }
+
+    public static void writeCSVFile(Payslip slip) throws IOException {
+        writeCSVFile(slip, Main.resolvePath());
+    }
+
+    public static String resolveOutputFile(String file) {
+        return Paths.get(new File(file).getParent()).resolve("Employee.csv").toString();
     }
 }
