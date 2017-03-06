@@ -5,6 +5,8 @@ import com.myob.exercise.exceptions.InvalidNameException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Locale;
 
 public class InputDataValidator {
 
@@ -18,12 +20,18 @@ public class InputDataValidator {
     }
 
     public static LocalDate[] validateDate(String date) throws InvalidDateException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        Locale.setDefault(Locale.UK);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy", Locale.ENGLISH);
+        DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
+                .appendPattern("dd-MMM-yyyy")
+                .toFormatter();
         String[] dates = date.split(" - ");
         LocalDate[] payslipDates = {LocalDate.parse(dates[0], formatter), LocalDate.parse(dates[1], formatter)};
-        if (payslipDates[0].isBefore(START_DATE) || payslipDates[1].isAfter(END_DATE) || payslipDates[0].isAfter(payslipDates[1])) {
+        if (payslipDates[0].isBefore(START_DATE) || payslipDates[1].isAfter(END_DATE))
             throw new InvalidDateException("Wrong Dates. Calculator work only for 2012/2013 tax year (1 Jul 2012 - 31 May 2013).");
-        }
+        if (payslipDates[0].isAfter(payslipDates[1]))
+            throw new InvalidDateException("First Date should be befor second.");
+
         return payslipDates;
     }
 }

@@ -1,6 +1,5 @@
 package com.myob.exercise.fileoperation;
 
-import com.myob.exercise.Main;
 import com.myob.exercise.exceptions.PersonNotFoundException;
 import com.myob.exercise.exceptions.WrongPathException;
 import com.myob.exercise.model.Payslip;
@@ -15,6 +14,7 @@ import java.util.function.Predicate;
 public class CsvOperations {
 
     private static final String SEPARATOR = ";";
+    private static final String currentPath = Paths.get("").toAbsolutePath().resolve("Employees.csv").toString();
 
     public static List<String> getEmployeeDataFromCSVFile(String name, String surname, String csvFile) throws IOException, PersonNotFoundException, WrongPathException {
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
@@ -39,18 +39,18 @@ public class CsvOperations {
         return Arrays.asList(line.split(SEPARATOR));
     }
 
-    public static void writeCSVFile(Payslip slip, String ownerFilePath) throws IOException {
-        try (PrintWriter writer = new PrintWriter(resolveOutputFile(ownerFilePath))) {
+    public static void writeCSVFile(Payslip slip, String filePath) throws IOException {
+        try (PrintWriter writer = new PrintWriter(resolveOutputFile(filePath))) {
             writer.println(Payslip.toCSVHeader());
             writer.println(slip.toString());
         }
     }
 
-    public static void writeCSVFile(Payslip slip) throws IOException {
-        writeCSVFile(slip, Main.resolvePath());
+    private static String resolveOutputFile(String file) {
+        return Paths.get(new File(file).getParent()).resolve("Employee.csv").toString();
     }
 
-    public static String resolveOutputFile(String file) {
-        return Paths.get(new File(file).getParent()).resolve("Employee.csv").toString();
+    public static String getCurrentPath() {
+        return currentPath;
     }
 }

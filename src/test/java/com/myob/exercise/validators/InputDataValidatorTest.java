@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.format.DateTimeParseException;
+import java.util.Locale;
 
 public class InputDataValidatorTest {
 
@@ -18,10 +19,11 @@ public class InputDataValidatorTest {
 
     @Before
     public void generate() {
-        correctDate = "1-mar-2013 - 31-mar-2013";
+        Locale.setDefault(Locale.UK);
+        correctDate = "01-Feb-2013 - 31-feb-2013";
         brokenString = "test";
-        wrongDate = "15-mar-2013 - 14-mar-2013";
-        dateBeforeCalculatorPeriod = "15-mar-2011 - 31-mar-2011";
+        wrongDate = "15-mar-2013 - 14-JUL-2013";
+        dateBeforeCalculatorPeriod = "15-apr-2011 - 31-apr-2011";
         name = "Jacek - O'Neil";
         wrongName = "Jacek @ Neil";
     }

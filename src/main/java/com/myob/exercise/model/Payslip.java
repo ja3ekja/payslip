@@ -27,7 +27,8 @@ public class Payslip {
     public String toString() {
         return name + ";" + startDate + ";" + endDate + ";" + grossIncome + ";" + incomeTax + ";" + netIncome + ";" + superRate;
     }
-    public static String toCSVHeader(){
-        return "name;startDate;endDate;grossIncome;incomeTax;netIncome;superRate";
+
+    public static String toCSVHeader() {
+        return "firstName;lastName;startDate;endDate;grossIncome;incomeTax;netIncome;superRate";
     }
 }
