@@ -12,6 +12,7 @@ import com.myob.exercise.validators.InputDataValidator;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 public class Main {
@@ -41,7 +42,7 @@ public class Main {
             Employee emp = new Employee(firstName, lastName, salary, rate);
             payslip = PayslipService.calculate(new PayslipInputData(emp, dates[0], dates[1]));
             CsvOperations.writeCSVFile(payslip, filePath);
-        } catch (PaySlipException | IOException e) {
+        } catch (PaySlipException | IOException | DateTimeParseException e) {
             e.printStackTrace();
         }
     }

@@ -2,10 +2,10 @@ package com.myob.exercise.validators;
 
 import com.myob.exercise.exceptions.InvalidDateException;
 import com.myob.exercise.exceptions.InvalidNameException;
+import com.myob.exercise.exceptions.WrongDateFormatException;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.time.format.DateTimeParseException;
 import java.util.Locale;
 
 public class InputDataValidatorTest {
@@ -29,22 +29,22 @@ public class InputDataValidatorTest {
     }
 
     @Test
-    public void validateDateTest() throws InvalidDateException {
+    public void validateDateTest() throws InvalidDateException, WrongDateFormatException {
         EmployeeValidator.validateDate(correctDate);
     }
 
-    @Test(expected = DateTimeParseException.class)
-    public void validateWrongStringTest() throws InvalidDateException {
+    @Test(expected = WrongDateFormatException.class)
+    public void validateWrongStringTest() throws InvalidDateException, WrongDateFormatException {
         EmployeeValidator.validateDate(brokenString);
     }
 
     @Test(expected = InvalidDateException.class)
-    public void validateWrongDataTest() throws InvalidDateException {
+    public void validateWrongDataTest() throws InvalidDateException, WrongDateFormatException {
         EmployeeValidator.validateDate(wrongDate);
     }
 
     @Test(expected = InvalidDateException.class)
-    public void validateDataBeforeRangeTest() throws InvalidDateException {
+    public void validateDataBeforeRangeTest() throws InvalidDateException, WrongDateFormatException {
         EmployeeValidator.validateDate(dateBeforeCalculatorPeriod);
     }
 

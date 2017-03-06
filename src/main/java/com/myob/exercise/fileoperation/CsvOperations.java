@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 public class CsvOperations {
 
     private static final String SEPARATOR = ";";
-    private static final String currentPath = Paths.get("").toAbsolutePath().resolve("Employees.csv").toString();
+    private static final String currentPath = Paths.get("").toAbsolutePath().resolve("..\\..\\Employees.csv").toString();
 
     public static List<String> getEmployeeDataFromCSVFile(String name, String surname, String csvFile) throws IOException, PersonNotFoundException, WrongPathException {
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
