@@ -4,23 +4,23 @@ import java.math.BigDecimal;
 
 public class Employee extends Person {
     private BigDecimal annualSalary;
-    private float superRate;
+    private float superannuation;
 
-    public Employee(String firstName, String lastName, BigDecimal annualSalary, float superRate) {
+    public Employee(String firstName, String lastName, BigDecimal annualSalary, float superannuation) {
         super(firstName, lastName);
         this.annualSalary = annualSalary;
-        this.superRate = superRate;
+        this.superannuation = superannuation;
     }
 
     public BigDecimal getAnnualSalary() {
         return annualSalary;
     }
 
-    public float getSuperRate() {
-        return superRate;
+    public float getSuperannuation() {
+        return superannuation;
     }
 
-    public void setSuperRate(float superRate) {
-        this.superRate = superRate;
+    public void setSuperannuation(float superannuation) {
+        this.superannuation = superannuation;
     }
 }

@@ -5,6 +5,7 @@ C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\Wron
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\model\TaxComponents.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\validators\InputDataValidator.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\services\PayslipService.java
+C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\SuperannuationException.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\model\Payslip.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\model\Employee.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\model\PayslipInputData.java
@@ -15,5 +16,4 @@ C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\Main.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\PersonNotFoundException.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\InvalidNameException.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\PaySlipException.java
-C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\exceptions\SuperRateException.java
 C:\Users\HP\Desktop\myob\payslip\src\main\java\com\myob\exercise\fileoperation\CsvOperations.java

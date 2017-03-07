@@ -36,9 +36,9 @@ public class PayslipServiceTest {
 
     @Test
     public void calculateForDifferentInputDataTest() {
-        payslipInputData.getEmployee().setSuperRate(5f);
+        payslipInputData.getEmployee().setSuperannuation(5f);
         assertNotEquals(PayslipService.calculate(payslipInputData), payslip);
-        payslipInputData.getEmployee().setSuperRate(10f);
+        payslipInputData.getEmployee().setSuperannuation(10f);
     }
 
     @Test

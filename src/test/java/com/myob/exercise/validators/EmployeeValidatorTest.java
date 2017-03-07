@@ -1,7 +1,7 @@
 package com.myob.exercise.validators;
 
 import com.myob.exercise.exceptions.SalaryException;
-import com.myob.exercise.exceptions.SuperRateException;
+import com.myob.exercise.exceptions.SuperannuationException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,12 +12,12 @@ import static org.junit.Assert.*;
 public class EmployeeValidatorTest {
 
     private BigDecimal salary;
-    private float superRate;
+    private float superannuation;
 
     @Before
     public void generate() {
         salary = new BigDecimal(55000);
-        superRate = 9.5f;
+        superannuation = 9.5f;
     }
 
     @Test
@@ -36,17 +36,17 @@ public class EmployeeValidatorTest {
     }
 
     @Test
-    public void validateSuperRateTest() throws SuperRateException {
-        assertTrue(EmployeeValidator.validateSuperRate("9.5") == superRate);
+    public void validateSuperannuationTest() throws SuperannuationException {
+        assertTrue(EmployeeValidator.validateSuperannuation("9.5") == superannuation);
     }
 
     @Test
-    public void validateSuperRateNotEqualsTest() throws SuperRateException {
-        assertNotEquals(EmployeeValidator.validateSuperRate("30"), superRate);
+    public void validateSuperanuationNotEqualsTest() throws SuperannuationException {
+        assertNotEquals(EmployeeValidator.validateSuperannuation("30"), superannuation);
     }
 
-    @Test(expected = SuperRateException.class)
-    public void validateSuperRateWrongSuperTest() throws SuperRateException {
-        EmployeeValidator.validateSuperRate("80");
+    @Test(expected = SuperannuationException.class)
+    public void validateSuperannuationWrongSuperTest() throws SuperannuationException {
+        EmployeeValidator.validateSuperannuation("80");
     }
 }

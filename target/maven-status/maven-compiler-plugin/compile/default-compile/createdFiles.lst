@@ -9,9 +9,9 @@ com\myob\exercise\services\PayslipService.class
 com\myob\exercise\exceptions\WrongDateFormatException.class
 com\myob\exercise\validators\EmployeeValidator.class
 com\myob\exercise\validators\InputDataValidator.class
+com\myob\exercise\exceptions\SuperannuationException.class
 com\myob\exercise\exceptions\InvalidNameException.class
 com\myob\exercise\fileoperation\CsvOperations.class
-com\myob\exercise\exceptions\SuperRateException.class
 com\myob\exercise\exceptions\InvalidDateException.class
 com\myob\exercise\exceptions\SalaryException.class
 com\myob\exercise\exceptions\PersonNotFoundException.class

@@ -38,7 +38,7 @@ public class Main {
             LocalDate[] dates = InputDataValidator.validateDate(date);
             List<String> empData = CsvOperations.getEmployeeDataFromCSVFile(firstName, lastName, filePath);
             BigDecimal salary = EmployeeValidator.validateSalary(empData.get(2));
-            float rate = EmployeeValidator.validateSuperRate(empData.get(3));
+            float rate = EmployeeValidator.validateSuperannuation(empData.get(3));
             Employee emp = new Employee(firstName, lastName, salary, rate);
             payslip = PayslipService.calculate(new PayslipInputData(emp, dates[0], dates[1]));
             CsvOperations.writeCSVFile(payslip, filePath);

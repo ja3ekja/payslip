@@ -29,11 +29,11 @@ public class TaxConstants {
 
     public static List<TaxComponents> getTaxConstantsList() {
         return Arrays.asList(
-                new TaxComponents(FIRST_LIMIT,  ZERO,                  ZERO,           ZERO),
-                new TaxComponents(SECOND_LIMIT, FIRST_TAX_MULTIPLIER,  ZERO,           FIRST_LIMIT),
-                new TaxComponents(THIRD_LIMIT,  SECOND_TAX_MULTIPLIER, FIRST_TAX_FEE,  SECOND_LIMIT),
-                new TaxComponents(FOURTH_LIMIT, THIRD_TAX_MULTIPLIER,  SECOND_TAX_FEE, THIRD_LIMIT),
-                new TaxComponents(RELATIVE_MAX, FOURTH_TAX_MULTIPLIER, THIRD_TAX_FEE,  FOURTH_LIMIT)
+                new TaxComponents(FIRST_LIMIT, ZERO, ZERO, ZERO),
+                new TaxComponents(SECOND_LIMIT, FIRST_TAX_MULTIPLIER, ZERO, FIRST_LIMIT),
+                new TaxComponents(THIRD_LIMIT, SECOND_TAX_MULTIPLIER, FIRST_TAX_FEE, SECOND_LIMIT),
+                new TaxComponents(FOURTH_LIMIT, THIRD_TAX_MULTIPLIER, SECOND_TAX_FEE, THIRD_LIMIT),
+                new TaxComponents(RELATIVE_MAX, FOURTH_TAX_MULTIPLIER, THIRD_TAX_FEE, FOURTH_LIMIT)
         );
     }
 }

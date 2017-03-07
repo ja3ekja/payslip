@@ -1,7 +1,7 @@
 package com.myob.exercise.validators;
 
 import com.myob.exercise.exceptions.SalaryException;
-import com.myob.exercise.exceptions.SuperRateException;
+import com.myob.exercise.exceptions.SuperannuationException;
 
 import java.math.BigDecimal;
 
@@ -14,10 +14,10 @@ public class EmployeeValidator extends InputDataValidator {
         return annualSalary;
     }
 
-    public static float validateSuperRate(String superRate) throws SuperRateException {
-        float rate = Float.valueOf(superRate);
+    public static float validateSuperannuation(String superannuation) throws SuperannuationException {
+        float rate = Float.valueOf(superannuation);
         if (rate < 0 || rate > 50)
-            throw new SuperRateException("Super Rate should be in range from 0% to 50 %.");
+            throw new SuperannuationException("Super Rate should be in range from 0% to 50 %.");
         return rate;
     }
 }

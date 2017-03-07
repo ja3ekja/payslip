@@ -34,7 +34,7 @@ public class CsvOperationsTest {
 
     @Test()
     public void writeCSVFileFileWrongPathTest() throws IOException {
-        CsvOperations.writeCSVFile(payslip, fakePath);
+        CsvOperations.writeCSVFile(payslip, csvFilePath);
     }
 
     @Test

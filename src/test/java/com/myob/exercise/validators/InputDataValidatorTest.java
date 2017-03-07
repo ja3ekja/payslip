@@ -12,6 +12,7 @@ public class InputDataValidatorTest {
 
     private String correctDate;
     private String wrongDate;
+    private String moreThanOneMonthDate;
     private String brokenString;
     private String dateBeforeCalculatorPeriod;
     private String name;
@@ -20,9 +21,10 @@ public class InputDataValidatorTest {
     @Before
     public void generate() {
         Locale.setDefault(Locale.UK);
-        correctDate = "01-Feb-2013 - 31-feb-2013";
+        correctDate = "01-Feb-2013 - 31-Feb-2013";
         brokenString = "test";
         wrongDate = "15-mar-2013 - 14-JUL-2013";
+        moreThanOneMonthDate = "15-mar-2013 - 14-Apr-2013";
         dateBeforeCalculatorPeriod = "15-apr-2011 - 31-apr-2011";
         name = "Jacek - O'Neil";
         wrongName = "Jacek @ Neil";
@@ -41,6 +43,11 @@ public class InputDataValidatorTest {
     @Test(expected = InvalidDateException.class)
     public void validateWrongDataTest() throws InvalidDateException, WrongDateFormatException {
         EmployeeValidator.validateDate(wrongDate);
+    }
+
+    @Test(expected = InvalidDateException.class)
+    public void validateMoreThanOneMonthDataTest() throws InvalidDateException, WrongDateFormatException {
+        EmployeeValidator.validateDate(moreThanOneMonthDate);
     }
 
     @Test(expected = InvalidDateException.class)

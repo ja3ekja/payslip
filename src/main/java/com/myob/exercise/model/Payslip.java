@@ -23,12 +23,12 @@ public class Payslip {
         this.superRate = superRate;
     }
 
+    public static String toCSVHeader() {
+        return "firstName;lastName;startDate;endDate;grossIncome;incomeTax;netIncome;superRate";
+    }
+
     @Override
     public String toString() {
         return name + ";" + startDate + ";" + endDate + ";" + grossIncome + ";" + incomeTax + ";" + netIncome + ";" + superRate;
-    }
-
-    public static String toCSVHeader() {
-        return "firstName;lastName;startDate;endDate;grossIncome;incomeTax;netIncome;superRate";
     }
 }
