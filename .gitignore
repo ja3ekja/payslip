@@ -16,7 +16,6 @@ hs_err_pid*
 *.iml
 
 # Build files
-/target/
 /.settings/
 *.classpath
 *.project

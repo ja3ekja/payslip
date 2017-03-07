@@ -1,0 +1,5 @@
+com\myob\exercise\fileoperation\CsvOperationsTest.class
+com\myob\exercise\services\PayslipServiceTest.class
+com\myob\exercise\constants\TaxConstantsTest.class
+com\myob\exercise\validators\EmployeeValidatorTest.class
+com\myob\exercise\validators\InputDataValidatorTest.class
